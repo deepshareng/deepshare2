@@ -1,0 +1,24 @@
+brand_fathers:
+  # uainfo:
+  # Mozilla/5.0 (Linux; U; Android 2.3.3; zh-cn; HTC_DesireZ_A7272 Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1,
+  # Dalvik/1.4.0 (Linux; U; Android 2.3.3; HTC Vision Build/GRI40)
+  - father: 'htc#vision'
+    son: 'htc#desirez#a7272'
+
+  # uainfo:
+  # Mozilla/5.0 (Linux; U; Android 2.2; zh-cn; HTCA8180/1.0 Android/2.2 release/06.23.2010 Browser/WAP 2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1,
+  # Dalvik/1.2.0 (Linux; U; Android 2.2; HTC Desire Build/FRF91)
+  - father: 'htc#desire'
+    son: 'htc#a8180'
+
+  # uainfo:
+  # Mozilla/5.0 (Linux; U; Android 2.2.1; zh-cn; HTC Hero Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1,
+  # Dalvik/1.2.0 (Linux; U; Android 2.2.1; Desire HD Build/FRG83D)
+  - father: 'htc#desire'
+    son: 'htc#hero'
+
+  # uainfo:
+  # Nokia_RM-1061/1.0 Android/4.3 (Linux; U; Android 4.3; zh-cn) Release/07.15.2014 Browser/WAP 2.0 Mozilla/5.0 AppleWebKit534.30 Profile/MIDP-2.0 Configuration/CLDC-1.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30,
+  # Dalvik/1.6.0 (Linux; U; Android 4.3; Nokia_XL_4G Build/JLS36C)
+  - father: 'nokia#xl#4g'
+    son: 'nokia#rm#1061'

@@ -1,0 +1,189 @@
+FROM r.fds.so:5000/golang1.5.3
+
+ADD . /go/src/github.com/MISingularity/deepshare2
+WORKDIR /go/src/github.com/MISingularity/deepshare2
+RUN git log -1 > /go/bin/deepshare2_version.txt
+
+RUN godep go build -o /go/bin/deepstatsd-aggregate /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/aggregate/main.go
+RUN godep go build -o /go/bin/deepstatsd-appchannel /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/appchannel/main.go
+RUN godep go build -o /go/bin/deepstatsd-appevent /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/appevent/main.go
+RUN godep go build -o /go/bin/deepstatsd-dsusage /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/dsusage/main.go
+RUN godep go build -o /go/bin/deepstatsd-backup /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/backup/main.go
+RUN godep go build -o /go/bin/deepstatsd-attribution /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/attribution/main.go
+RUN godep go build -o /go/bin/deepstatsd-device /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/device_stat/main.go
+
+RUN godep go build -o /go/bin/deepstats-api /go/src/github.com/MISingularity/deepshare2/cmd/deepstats/main.go
+
+# deepstatsd-aggregate runs as a daemon to continuously consume from NSQ and aggregate data by channels, there are three services need to start up on the basis of distinct granularity, plus need to specify the nsq channel.
+## CMD /go/bin/deepstatsd-aggregate -agg-service=hour -channel=deepstats_aggregate_hour -mongocoll=hour
+## CMD /go/bin/deepstatsd-aggregate -agg-service=day -channel=deepstats_aggregate_day -mongocoll=day
+## CMD /go/bin/deepstatsd-aggregate -agg-service=total -channel=deepstats_aggregate_total -mongocoll=total
+
+# arguments for deepstatsd-aggregate:
+#*argument*            *default value* (*description*)
+# agg-service           hour/day/total
+# nsqsel                nsqlookupd  ("nsqlookupd" or "nsqd", used for specify the way to get nsq message)
+# nsqd-tcp-addr         null        ("<host>:<port>",should be set when nsqsel=nsqd)
+# nsqlookupd-http-addr  null        ("<host>:<port>",should be set when nsqsel=nsqlookupd)
+# topics                counter,sharelink,dsaction,genurl,inappdata,match    (Specify the NSQ topics to consume)
+# channel               test1       (Specify the NSQ channel for consumer)
+# mongo-addr            null        ("<host>:<port>",the raw data mongo database URL)
+# mongodb               deepstats   (Specify the Mongo database)
+# mongocoll             hour/day/total  (Specify the Mongo collection)
+# redis-cluster-node-url null       (One of the redis 3.0 cluster nodes url)
+# redis-password        null
+# redis-pool-size       100         (size of redis connection pool)
+
+# deepstatsd-appchannel runs as a daemon to continuously consume from NSQ and accumulate relationship between channels and apps.
+## CMD /go/bin/deepstatsd-appchannel
+
+# deepstatsd-appevent runs as a daemon to continuously consume from NSQ and accumulate relationship between events and apps.
+## CMD /go/bin/deepstatsd-appevent
+
+# arguments for both deepstatsd-appchannel and deepstatsd-appevent:
+#*argument*            *default value* (*description*)
+# nsqsel                nsqlookupd  ("nsqlookupd" or "nsqd", used for specify the way to get nsq message)
+# nsqd-tcp-addr         null        ("<host>:<port>",should be set when nsqsel=nsqd)
+# nsqlookupd-http-addr  null        ("<host>:<port>",should be set when nsqsel=nsqlookupd)
+# topics                counter,sharelink,dsaction,genurl,inappdata,match    (Specify the NSQ topics to consume)
+# channel               test1       (Specify the NSQ channel for consumer)
+# mongo-addr            null        ("<host>:<port>",the raw data mongo database URL)
+# mongodb               deepstats   (Specify the Mongo database)
+# mongocoll             day         (Specify the Mongo collection)
+
+# deepstatsd-dsusage runs as a daemon to continuously consume from NSQ and accumulate usages for senders.
+## CMD /go/bin/deepstatsd-dsusage
+
+# arguments for deepstatsd-dsusage
+#*argument*            *default value* (*description*)
+# nsqsel                nsqlookupd  ("nsqlookupd" or "nsqd", used for specify the way to get nsq message)
+# nsqd-tcp-addr         null        ("<host>:<port>",should be set when nsqsel=nsqd)
+# nsqlookupd-http-addr  null        ("<host>:<port>",should be set when nsqsel=nsqlookupd)
+# topics                counter,match,sharelink,dsaction,genurl    (Specify the NSQ topics to consume)
+# channel               test1       (Specify the NSQ channel for consumer)
+# redis-cluster-node-url null       (One of the redis 3.0 cluster nodes url)
+# redis-password        null
+# redis-pool-size       100             (size of redis connection pool)
+
+# deepstatsd-attribution runs as a daemon to continuously retrieve sender & channels for counter events, based on inappdata events.
+## CMD /go/bin/deepstatsd-attribution
+
+# arguments for deepstatsd-attribution
+#*argument*            *default value* (*description*)
+# nsqd-tcp-addr         null        ("<host>:<port>")
+# nsqlookupd-http-addr  null        ("<host>:<port>")
+# topics                counter_raw,inappdata,dsaction    (Specify the NSQ topics to consume)
+# channel               deepstats_attribution   (Specify the NSQ channel for consumer)
+# mongo-addr            null        ("<host>:<port>",the raw data mongo database URL)
+# mongodb               deepstats   (Specify the Mongo database)
+# mongocoll             attribution (Specify the Mongo collection)
+# redis-cluster-node-url null       (One of the redis 3.0 cluster nodes url)
+# redis-password         null
+# redis-pool-size        100        (size of redis connection pool)
+
+# deepstatsd-device runs as a daemon to continuously calculate the total number of devices that called deepshare service
+# arguments for deepstatsd-device
+#*argument*            *default value* (*description*)
+# nsqsel                nsqlookupd  ("nsqlookupd" or "nsqd", used for specify the way to get nsq message)
+# nsqd-tcp-addr         null        ("<host>:<port>",should be set when nsqsel=nsqd)
+# nsqlookupd-http-addr  null        ("<host>:<port>",should be set when nsqsel=nsqlookupd)
+# topics                counter,sharelink,dsaction,genurl,inappdata,match    (Specify the NSQ topics to consume)
+# channel               deepstats_device_stat       (Specify the NSQ channel for consumer)
+# redis-cluster-node-url null       (One of the redis 3.0 cluster nodes url)
+# redis-password        null
+# redis-pool-size       100             (size of redis connection pool)
+
+# deepstats-api serves the APIs for dashboard
+## CMD /go/bin/deepstats-api
+#*argument*             *default value* (*description*)
+# http-listen           0.0.0.0:16759   (HTTP/HTTPs Host and Port to listen on)
+# mongo-addr            null            ("<host>:<port>",the raw data mongo database URL)
+# mongodb-hour-aggregate     deepstats       (mongo database of deepstatsd-hour-aggregate)
+# mongocoll-hour-aggregate   hour         (mongo collection of deepstatsd-hour-aggregate)
+# mongodb-day-aggregate     deepstats       (mongo database of deepstatsd-day-aggregate)
+# mongocoll-day-aggregate   day         (mongo collection of deepstatsd-day-aggregate)
+# mongodb-total-aggregate     deepstats       (mongo database of deepstatsd-total-aggregate)
+# mongocoll-total-aggregate   total         (mongo collection of deepstatsd-total-aggregate)
+# mongodb-appchannel    deepstats       (mongo database of deepstatsd-appchannel)
+# mongocoll-appchannel  appchannel         (mongo collection of deepstatsd-appchannel)
+# mongodb-appevent    deepstats       (mongo database of deepstatsd-appchannel)
+# mongocoll-appevent  appevent         (mongo collection of deepstatsd-appchannel)
+# redis-cluster-node-url null       (One of the redis 3.0 cluster nodes url)
+# redis-password        null
+# redis-pool-size       100             (size of redis connection pool)
+EXPOSE 16759
+
+# deepstatsd-backup runs as a daemon to continuously backup message into mongo/fs from NSQ
+## CMD /go/bin/deepstatsd-backup
+## Usage of deepstatsd-backup:
+# backupsel             mongo-raw   ( "localfs" or "mongo-compress-day" "mongo-raw". Specify the way of backing up data)
+# path                  null        (Local filesystem backup path)
+# mongo-addr            null        ("<host>:<port>",the raw data mongo database URL)
+# nsqsel                nsqlookupd  ("nsqlookupd" or "nsqd", used for specify the way to get nsq message)
+# nsqd-tcp-addr         null        ("<host>:<port>",should be set when nsqsel=nsqd)
+# nsqlookupd-http-addr  null        ("<host>:<port>",should be set when nsqsel=nsqlookupd)
+# topics                counter,match,sharelink,dsaction,genurl,inappdata,retention    (Specify the NSQ topics to consume)
+# channel               deepstats-backup       (Specify the NSQ channel for consumer)
+# mongodb               deepstats_day_backup   (Specify the Mongo database)
+# mongocoll             backup     (Specify the Mongo collection)
+
+
+
+### retention service
+
+RUN godep go build -o /go/bin/deepstatsd-retention /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/retention/main.go
+
+## deepstatsd-retention-3-days retention service
+## CMD /go/bin/deepstatsd-retention
+## distinct parameters: -channel=3-day-retention -retention-day=3 -retention-service-name=3-day-retention
+## required parameters: -nsq-url -nsqlookupd-http-addr -redis-addr -redis-password
+
+## deepstatsd-retention-7-days retention service
+## CMD /go/bin/deepstatsd-retention
+## distinct parameters: -channel=7-day-retention -retention-day=7 -retention-service-name=7-day-retention
+## required parameters: -nsq-url -nsqlookupd-http-addr -redis-addr -redis-password
+
+## Usage of deepstatsd-retention:
+##(REQUIRE nsq url, nsqd/nsqlookupd config and redis config!)
+# nsq-url               null        (The nsqd url to produce message)
+# redis-addr            null        (Specify the redis addr for deepstatsd-retention service)
+# redis-password        null        (The redis password to use as DB)
+# nsqsel                nsqlookupd  ("nsqlookupd" or "nsqd", used for specify the way to get nsq message)
+# nsqd-tcp-addr         null        ("<host>:<port>",should be set when nsqsel=nsqd)
+# nsqlookupd-http-addr  null        ("<host>:<port>",should be set when nsqsel=nsqlookupd)
+# topics                inappdata    (Specify the NSQ topics to consume)
+# channel               deepstats-retention       (Specify the NSQ channel for consumer)
+# retention-day          3           (Specify the duration of retention calculated)
+# retention-service-name 3-day-retention (Specify the unique retention service, being used as redis set name and message event name)
+# retention-topic        retention   (Specify the NSQ Topic for retention service produce its message)
+
+
+### trigger these programs every day
+RUN godep go build -o /go/bin/deepstatsd-retention-sum /go/src/github.com/MISingularity/deepshare2/cmd/deepstatsd/jobs/retention/main.go
+
+## deepstatsd-retention-sum-3-days-service
+## CMD /go/bin/deepstatsd-retention-sum
+## distinct parameters: -service-name=3-day-retention
+## required parameters: -nsq-url -deepstats-url -mongo-addr
+
+## deepstatsd-retention-sum-7-days-service
+## CMD /go/bin/deepstatsd-retention-sum
+## distinct parameters: -service-name=7-day-retention
+## required parameters: -nsq-url -deepstats-url -mongo-addr
+
+## Usage of deepstatsd-crontask-retention:
+##(REQUIRE nsq url, deepstats url and mongo url config!)
+#  -deepstats-url                       null                    The deepstats url to request data
+#  -nsq-url                             null                    The nsqd url to produce message
+#  -mongo-addr                          null                    Specify the mongo database URL
+#  -appchannel-mongodb                  deepstats               Specify the Mongo appchannel database
+#  -appchannel-mongocoll                appchannel              Specify the Mongo appchannel collection
+#  -job-last-time-mongodb               deepstats               Specify the Mongo database saving the last process time of job
+#  -job-last-time-mongocoll             joblasttime             Specify the Mongo collection saving the first unprocessed time of job
+#  -channel-mark-last-time-mongocoll    channelmarklasttime     Specify the Mongo collection saving the first unprocessed time of channel
+#  -retention-count-topic               retention               Specify the NSQ Topic for retention service produce its message
+#  -service-name                        3-day-retention         Specify the service name
+
+# remove source code
+RUN rm -rf /go/src
+WORKDIR /go/bin

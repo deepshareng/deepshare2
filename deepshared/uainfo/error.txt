@@ -1,0 +1,112 @@
+刷机：
+--
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.4; HTC Ruby Build/GRJ22)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.3.4; zh-cn; HTC_Amaze Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+--
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.5; Capitel TD2000 Build/MocorDroid2.3.5)'
+browser: 'SHY_S88_TD/1.0 Release/10.24.2012 Mozilla/5.0 (Linux; U; Android 2.3.5) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+--
+app:Dalvik/1.6.0 (Linux; U; Android 4.1.1; IPH5 Build/IML74K)
+browser:Mozilla/5.0 (Linux; U; Android 4.1.1; IPH5) Linux/3.0.8 Release/08.20.2013  AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+
+
+不匹配：
+--
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.3; GT-N7105 Build/JSS15J)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; Galaxy Nexus Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/5.0 Mb2345Browser/4.0 Mobile Safari/534.30'
+--
+app:Dalvik/1.6.0 (Linux; U; Android 4.4.4; vivo Y28L Build/KTU84P)
+browser:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-URL-Manager Mobile Safari/537.36
+--
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.0.4; MI 1S MIUI/ICS23.0)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.0.1; zh-cn; MI-ONE Plus Build/ITL41D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
+--
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.0.4; MI 1S MIUI/ICS18.0)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.0.1; zh-cn; MI-ONE Plus Build/ITL41D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
+
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.0.4; GT-I9228 Build/IMM76D)'
+browser: 'SAMSUNG-GT-I9228_TD/1.0 Android/2.3.5 Release/9.15.2011 Browser/AppleWebKit533.1 Profile/MIDP-2.1 Configuration/CLDC-1.1'
+
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.7; ZTE-T U880 Build/GWK74)'
+browser: 'ZTE-TU880_TD/1.0 Linux/2.6.32 Android/2.2 Release/5.25.2011 Browser/AppleWebKit533.1'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.1; Lenovo A3000-H Build/JOP40D)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.1; zh-cn; Lenovo-A3000-H/S100) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.1 Mobile Safari/534.30'
+
+app: 'Dalvik/1.2.0 (Linux; U; Android 2.2.2; GT-I9008L Build/FROYO)'
+browser: 'SAMSUNG-GT-I9008L_TD/1.0 Android/2.2.1 Release/12.15.2010 Browser/AppleWebKit533.1 Profile/MIDP-2.1 Configuration/CLDC-1.1'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; HTC 802t Build/JDQ39)'
+browser: 'HTC802t_TD/1.0 Android/4.1 release/2013 Browser/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.1.1; HTC T329t Build/JRO03H)'
+browser: 'HTCT329t_TD/1.0 Android/4.0 release/2012 Browser/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.1.1; HTC T528t Build/JRO03H)'
+browser: 'HTCT528t_TD/1.0 Android/4.0 release/2012 Browser/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; K-Touch W68a Build/JDQ39)'
+browser: 'K-Touch W68a/V2 Linux/3.0.13 Android/4.0 Release/02.15.2012 Browser/AppleWebKit534.30 Mobile Safari/534.30 MBBMS/2.2 System/Android 4.2.2'
+
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.5; Lenovo A60 Build/GRJ90)'
+browser: 'Lenovo-A60/S100 Linux/2.6.35.7 Android/2.3.3 Release/04.19.2011 Browser/AppleWebKit533.1 Profile/ Configuration/'
+
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.5; Lenovo P70 Build/GRJ90)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.3.4; zh-cn; Lenovo P70/S100) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.7; 9930 Build/GWK74)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.2; zh-cn; YL-Coolpad_9930/1.02.117.110510.9930; 960*480; CTC/2.0) CoolpadWebkit/533.1'
+
+app: 'Dalvik/2.1.0 (Linux; U; Android 5.0.1; GT-I9508 Build/LRX22C)'
+browser: 'Mozilla/5.0 (Linux; Android 4.4.2; zh-cn; SAMSUNG-GT-I9508_TD/1.0 Android/4.4.2 Release/02.24.2014 Browser/AppleWebKit535.19 Build/KOT49H) ApplelWebkit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.3; GT-N7108 Build/JSS15J)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.1.1; zh-cn; SAMSUNG-GT-N7108_TD/1.0 Android/4.1.1 Release/08.30.2012 Browser/AppleWebKit534.30 Build/JRO03C) ApplelWebkit/534.30 (KHTML,like Gecko) Version/4.0 Mobile Safari/534.30'
+
+app: 'Dalvik/0.0.0 (Linux; U; Android 1.5.3.5-RT-20120218.132828; W800 Build/AliyunOs-2012)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.2; en-us; sdk Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.6; SCH-I699 Build/GINGERBREAD)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.0.3; Lenovo A658t Build/S310)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; Galaxy Nexus Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/5.0 Mb2345Browser/4.0 Mobile Safari/534.30'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; Coolpad 8297D Build/JDQ39)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.2.1; zh-cn; Coolpad8297_CMCC_TD/1.0 Android/4.2.1 Release/02.20.2014 Browser/AppleWebKit534.30 Profile/MIDP-1.0 Configuration/CLDC-1.0) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.2 Mobile Safari/534.30'
+
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; vivo Xplay Build/JDQ39)'
+browser: 'Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; Galaxy Nexus Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/5.0 Mb2345Browser/4.0 Mobile Safari/534.30'
+
+app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.5; FDT E6 Build/GRJ90)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; FDT E18 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+app: 'Dalvik/2.1.0 (Linux; U; Android 5.1; k55v1_64_op01_6m Build/LMY47I)'
+browser: 'MTKDevice_TD/V1 Linux/3.10.72 Android/5.1 Release/12.21.2015 Browser/AppleWebKit537.36 Chrome/39.0.0.0 Mobile Safari/537.36 System/Android 5.1;'
+
+
+app: 'Dalvik/2.1.0 (Linux; U; Android 5.1; k55v1_64_op01_6m Build/LMY47I)'
+browser: 'MTKDevice_TD/V1 Linux/3.10.72 Android/5.1 Release/12.21.2015 Browser/AppleWebKit537.36 Chrome/39.0.0.0 Mobile Safari/537.36 System/Android 5.1;'
+
+
+
+
+
+浏览器没信息：
+--
+app:Dalvik/1.4.0 (Linux; U; Android 2.3.4; GT-S5830 Build/GINGERBREAD)
+browser:Opera/9.80 (Android; Opera Mini/7.1.32102/37.7570; U; zh) Presto/2.12.423 Version/12.16,
+--
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; AMOI A900T Build/JDQ39)'
+browser: 'MT6572/V1 Linux/3.4.5 Android/4.2.2 Release/12.26.2013 Browser/AppleWebKit534.30 Profile/MIDP-2.0 Configuration/CLDC-1.1 Mobile Safari/534.30 Android 4.2.2;'
+
+app没信息：
+app: 'Dalvik/1.6.0 (Linux; U; Android 4.0.3 Build/S-2-20)'
+browser: 'LenovoS899t_TD/1.0 Android/4.0 Release/02.01.2012 Browser/WAP2.0 appleWebkit/534.30'
+
+
+
+虚拟机：
+app: 'Dalvik/0.0.0 (Linux; U; Android 1.3.0.14-RT-20120215.194046; W700 Build/Aliyun_TianyunVM_v0.2.3.0)'
+browser: 'Mozilla/5.0 (Linux; U; Android 2.2; en-us; sdk Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'

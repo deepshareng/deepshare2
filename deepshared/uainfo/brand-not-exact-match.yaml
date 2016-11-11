@@ -1,0 +1,24 @@
+testcases:
+  - app: 'Dalvik/1.2.0 (Linux; U; Android 2.2.1; Desire HD Build/FRG83D)'
+    browser: 'Mozilla/5.0 (Linux; U; Android 2.2.1; zh-cn; HTC Hero Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+  - app: 'Dalvik/1.2.0 (Linux; U; Android 2.2; HTC Desire Build/FRF91)'
+    browser: 'Mozilla/5.0 (Linux; U; Android 2.2; zh-cn; HTCA8180/1.0 Android/2.2 release/06.23.2010 Browser/WAP 2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+  - app: 'Dalvik/1.6.0 (Linux; U; Android 4.3; Nokia_XL_4G Build/JLS36C)'
+    browser: 'Nokia_RM-1061/1.0 Android/4.3 (Linux; U; Android 4.3; zh-cn) Release/07.15.2014 Browser/WAP 2.0 Mozilla/5.0 AppleWebKit534.30 Profile/MIDP-2.0 Configuration/CLDC-1.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
+
+  - app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.3; HTC Vision Build/GRI40)'
+    browser: 'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-cn; HTC_DesireZ_A7272 Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+
+  - app: 'Dalvik/1.4.0 (Linux; U; Android 2.3.4; LG-P970 Build/GRJ22)'
+    browser: 'Mozilla/5.0 (Linux; U; Android 2.3.4; zh-cn; LG-P970-Orange/V20g Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MMS/LG-Android-MMS-V1.0/1.2'
+
+  - app: 'Dalvik/1.6.0 (Linux; U; Android 4.1.2; 8190Q Build/JZO54K)'
+    browser: 'CoolPad8190Q_CMCC_TD/1.0 Linux/3.4.5 Android/4.1 Release/03.31.2013 Browser/AppleWebkit534.3'
+
+  - app: 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; HUAWEI G716-L070 Build/HuaweiG716-L070)'
+    browser: 'Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; HuaweiG716-L070_LTE Build/HuaweiG716-L070_LTE) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
+
+  - app: 'Dalvik/1.6.0 (Linux; U; Android 4.3; M811 Build/JLS36C)'
+    browser: 'CMCC M811_LTE/1.0 Android/4.3 Release/26.5.2014 Browser/AppleWebKit534.30/Profile/MIDP-2.0 Configuration/CLDC-1.1'

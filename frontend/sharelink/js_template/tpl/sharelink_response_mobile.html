@@ -1,0 +1,333 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,width=device-width">
+    <link rel="stylesheet" type="text/css" href="../../jsserver/sharelink_response_mobile.css">
+    <script src="https://nzjddxpun.qnssl.com/ds-static/ssl/zepto.min.js"></script>
+    <script type="text/javascript">
+        var Params = {
+            AppName: '{{.AppName}}',
+            Pkg: '{{.Pkg}}',
+            BundleID: '{{.BundleID}}',
+            AppID: '{{.AppID}}',
+            IconUrl: '{{.IconUrl}}',
+            Url: '{{.Url}}',
+            Match_id: '{{.Match_id}}',
+            Download_msg: '{{.Download_msg}}',
+            Download_btn_text: '{{.Download_btn_text}}',
+            Download_title: '{{.Download_title}}',
+            Chrome_major: '{{.Chrome_major}}',
+            Ios_major: '{{.Ios_major}}',
+            Uninstall_url: '{{.Uninstall_url}}',
+            Redirect_url: '{{.Redirect_url}}',
+            Force_download: 'true' === '{{.Force_download}}',
+            YYB_url: '{{.YYB_url}}',
+            Scheme: '{{.Scheme}}',
+            Theme: '{{.Theme}}',
+            UserConf_Bg_WechatAndroidTip_url : '{{.UserConf_Bg_WechatAndroidTip_url}}',
+            UserConf_Bg_WechatIosTip_url : '{{.UserConf_Bg_WechatIosTip_url}}',
+            Host: '{{.Host}}',
+            AppInsStatus: '{{.AppInsStatus}}',
+            TimeStamp: '{{.Timestamp}}',
+            DsTag: '{{.DsTag}}',
+            Lang : 'chs',
+            isAndroid: function () {
+                return 'true' == '{{.isAndroid}}';
+            },
+            isIOS: function () {
+                return 'true' == '{{.isIOS}}';
+            },
+            isWechat: function () {
+                return 'true' == '{{.isWechat}}';
+            },
+            isWeibo: function () {
+                return 'true' == '{{.isWeibo}}';
+            },
+            isFacebook: function () {
+                return 'true' == '{{.isFacebook}}';
+            },
+            isTwitter: function () {
+                return 'true' == '{{.isTwitter}}';
+            },
+            isQQ: function () {
+                return 'true' == '{{.isQQ}}';
+            },
+            isQQBrowser: function () {
+                return 'true' == '{{.isQQBrowser}}';
+            },
+            isFirefox: function () {
+                return 'true' == '{{.isFirefox}}';
+            },
+            isChrome: function () {
+                return (this.Chrome_major > 0);
+            },
+            isUniversallink: function () {
+                return 'true' == '{{.isUniversallink}}';
+            },
+            isDownloadDirectly: function () {
+                return 'true' == '{{.isDownloadDirectly}}';
+            },
+            isCannotDeeplink: function () {
+                return 'true' == '{{.CannotDeeplink}}';
+            },
+            isCannotGetWinEvent: function () {
+                return 'true' == '{{.CannotGetWinEvent}}';
+            },
+            isCannotGoMarket: function () {
+                return 'true' == '{{.CannotGoMarket}}';
+            },
+            isForceUseScheme: function () {
+                return 'true' == '{{.ForceUseScheme}}';
+            },
+            isUC: function () {
+                return 'true' == '{{.isUC}}';
+            },
+            isYYBEnableAndroid: function () {
+                return 'true' == '{{.YYB_Enable_Android}}';
+            },
+            isYYBEnableIosBelow9: function () {
+                return 'true' == '{{.YYB_Enable_Ios_below_9}}';
+            },
+            isYYBEnableIosAbove9: function () {
+                return 'true' == '{{.YYB_Enable_Ios_Above_9}}';
+            }
+        };
+
+        var DEBUG = ('true' === '{{.debug }}');
+        var MOCK_DATA = false;
+
+        var isEng = /^en/.test(navigator.language);
+
+        if (isEng) {
+            Params.Lang = 'en';
+        }
+
+        if (Params.Lang === 'en') {
+            var ResGotoAppStore = "Go to APP Store";
+            var ResGotoAppStoreDownload = "Go to APP Store and Download";
+            var ResPleaseOpenAppStore = "Please Open App Market and search this App";
+            var ResDownloadAPK = "Download APK";
+            var ResDefaultDownloadMsg = "The Content will be Recovered";
+
+            var ResAllowMeMsg = "Let me help you to deeplink!";
+            var ResAllowMeTips = "When the open App dialog popup, please choose";
+            var ResOr = "or";
+            var ResAllowMeThisTime = "仅本次允许";
+            var ResAllowMeAlways = "始终允许";
+
+            var ResOopsMsg = "Can not open deeplink App";
+            var ResOopsTips = "if the App is already installed, just open in the home screen, if not, click button below.";
+
+            var ResAndroidNotAvailable = "Sorry, the Android version is not available currently.";
+            var ResiOSNotAvailable = "Sorry, the iOS version is not available currently.";
+
+            var ResOpenbrowserMsg = "Only 3 steps left!";
+            var ResAndroidOpenbrowserStep1 = "1.Click the button in the right top conner";
+            var ResAndroidOpenbrowserStep2 = "2.Open in browser";
+            var ResAndroidOpenbrowserStep3 = "3.Download in App Market";
+            var ResAndroidOpenbrowserStep4 = "4.Enter the App";
+            var ResiOSOpenbrowserStep1 = "1.Click the button in the right top conner";
+            var ResiOSOpenbrowserStep1RightDown = "1.Click the button in the right down conner";
+            var ResiOSOpenbrowserStep2 = "2.Open in Safari";
+            var ResiOSOpenbrowserStep3 = "3.Download in App Store";
+            var ResiOSOpenbrowserStep4 = "4.Enter the App";
+            
+            var ResDragdownTip = "Try drag down";
+        } else {
+            var ResGotoAppStore = "前往应用商店";
+            var ResGotoAppStoreDownload = "前往应用商店下载";
+            var ResPleaseOpenAppStore = "请打开应用市场搜索下载";
+            var ResDownloadAPK = "下载APK";
+            var ResDefaultDownloadMsg = "下载一下又不会丢内容";
+
+            var ResAllowMeMsg = "跳不过去，我来帮你！";
+            var ResAllowMeTips = "即将打开，请在弹窗中选择：";
+            var ResOr = "或";
+            var ResAllowMeThisTime = "仅本次允许";
+            var ResAllowMeAlways = "始终允许";
+
+            var ResOopsMsg = "浏览器太高，我跳不过去。";
+            var ResOopsTips = "如果您已经安装此App，可回到桌面直接打开；如果您尚未安装，请点击下方按钮前往应用商店下载。";
+
+            var ResAndroidNotAvailable = "抱歉，此APP没有Android版本";
+            var ResiOSNotAvailable = "抱歉，此APP没有iOS版本";
+
+            var ResOpenbrowserMsg = "距离成功只剩3步！";
+            var ResAndroidOpenbrowserStep1 = "1.点击右上角";
+            var ResAndroidOpenbrowserStep2 = "2.选择浏览器打开";
+            var ResAndroidOpenbrowserStep3 = "3.前往应用市场下载";
+            var ResAndroidOpenbrowserStep4 = "4.进入App";
+            var ResiOSOpenbrowserStep1 = "1.点击右上角";
+            var ResiOSOpenbrowserStep1RightDown = "1.点击右下角";
+            var ResiOSOpenbrowserStep2 = "2.选择Safari打开";
+            var ResiOSOpenbrowserStep3 = "3.前往App Store下载";
+            var ResiOSOpenbrowserStep4 = "4.进入App";
+
+            var ResDragdownTip = "下拉试试";
+        }
+    </script>
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image-tip {
+            text-align: center;
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            filter: alpha(opacity=40);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body style="width:100%; height:100%;" class="theme-{{.Theme}}">
+<div id="gotoLandingpage" class="hide">
+    <script id="gotoLandingpageTemplate" type="text/x-lodash-template">
+        <img src="${bgTop}" class="bg-top">
+        <div class="anim-dragdown ${dragdown-display}">
+            <img src="${dragdownIcon}" class="dragdown-icon">
+            <span class="dragdown-tips">${dragdownTip}</span>
+        </div>
+        <div class="content content-goto-appstore"> 
+            <img src="${iconUrl}" class="icon-normal">
+            <span class="app-name">${appName}</span>
+        </div>
+        <div class="download-info download-info-goto-app-store">
+            <span class="download-title">${downloadTitle}</span><br/>
+            <span class="download-msg">${downloadMsg}</span><br/>
+            <${elementType} id="btnGotoLandingPage" class="btn-download btn-download-goto-app-store">${btnLandingpageText}</${elementType}>
+        </div>
+        <footer>
+            <span class="copyright">Powered by DeepShare</span>
+        </footer>
+    </script>
+</div>
+
+<div id="gotoTip" class="hide">
+    <script id="weixinTipUserConfigTemplate" type="text/x-lodash-template">
+        <div class="image-tip" width="100%" height="100%" style="position:relative;">
+            <div style="background-color:#ffffff;width:100%;height:100%;position:absolute; top:0;">
+                <img src="${userconfigBg}" align="center" style="height: 100%;"/>
+            </div>
+        </div>
+    </script>
+
+     <script id="weixinTipTemplate" type="text/x-lodash-template">
+        <div class="content content-openbrowser">
+            <span class="openbrowser-title">${resOpenbrowserMsg}</span>
+            <img src="${bgImgUrl}" class="openbrowser-bg">
+            <div class="openbrowser-step openbrowser-step-1">
+                <span class="openbrowser-step-text">${openbrowserStep1}</span>
+                <span style="background-image:url(${iconsImgUrl})" class="openbrowser-icon openbrowser-icon-step-1"></span>
+            </div>
+            <div class="openbrowser-step openbrowser-step-2">
+                <span style="background-image:url(${iconsImgUrl})" class="openbrowser-icon openbrowser-icon-step-2"></span>
+                <span class="openbrowser-step-text">${openbrowserStep2}</span>
+            </div>
+            <div class="openbrowser-step openbrowser-step-3">
+                <span class="openbrowser-step-text">${openbrowserStep3}</span>
+                <span style="background-image:url(${iconsImgUrl})" class="openbrowser-icon openbrowser-icon-step-3"></span>
+            </div>
+            <span class="openbrowser-step-4">${openbrowserStep4}</span>
+            <div class="openbrowser-icon-step-4-div">
+                <a target="_blank" href="${downloadUrl}">
+                    <img src="${iconUrl}" class="icon-normal">
+                </a>
+            </div>
+        </div>
+        <footer>
+            <span class="copyright">Powered by DeepShare</span>
+        </footer>
+    </script>
+</div>
+
+<div id="gotoCannotDeeplink" class="hide">
+    <script id="gotoCannotDeeplinkWithDownloadBtnTemplate" type="text/x-lodash-template">
+        <img src="${bgTopImgUrl}" class="bg-right-top">
+        <div class="content content-oops">
+            <img src="${iconUrl}" class="icon-normal">
+            <span class="tips-title">${resOopsMsg}</span>
+            <span class="oops-tips">${resOopsTips}</span>
+            <img src="${bgBottomImgUrl}" class="oops-jump">
+        </div>
+         <div class="download-info download-info-oops">
+            <button id="btnGotoAndroidDownload" class="btn-download btn-download-oops">${resDownloadAPK}</button>
+        </div>
+        <footer>
+            <span class="copyright">Powered by DeepShare</span>
+        </footer>
+    </script>
+    <script id="gotoCannotDeeplinkWithMarketBtnTemplate" type="text/x-lodash-template">
+        <img src="${bgTopImgUrl}" class="bg-right-top">
+        <div class="content content-oops">
+            <img src="${iconUrl}" class="icon-normal">
+            <span class="tips-title">${resOopsMsg}</span>
+            <span class="oops-tips">${resOopsTips}</span>
+            <img src="${bgBottomImgUrl}" class="oops-jump">
+        </div>
+        <div class="download-info download-info-oops">
+            <button id="btnGotoAndroidMarket" class="btn-download btn-download-oops">${resGotoAppStore}</button>
+        </div>
+        <footer>
+            <span class="copyright">Powered by DeepShare</span>
+        </footer>
+    </script>
+</div>
+
+<div id="allowMeDeeplink" class="hide">
+    <script id="allowMeDeeplinkTemplate" type="text/x-lodash-template">
+        <img src="${bgTopImgUrl}" class="bg-right-top">
+        <img src="${bgBottomImgUrl}" class="bg-bottom">
+        <div class="content content-allow-me">
+            <span class="tips-title">${resAllowMeMsg}</span>
+            <span class="bg-text">${resAllowMeTips}</span>
+            <span class="list-item">${resAllowMeThisTime}</span>
+            <span class="bg-text">${resOr}</span>
+            <span class="list-item">${resAllowMeAlways}</span>
+            <p id="textCountDown" class="bg-text"></p>
+        </div>
+        <footer>
+            <span class="copyright">Powered by DeepShare</span>
+        </footer>
+    </script>
+</div>
+
+<div id="platformNotAvailable" class="hide">
+    <script id="platformNotAvailableTemplate" type="text/x-lodash-template">
+        <div class="content content-not-avail"> 
+            <img src="${bgImgUrl}" class="icon-huge">
+            <p class="bg-text">${resNotAvailable}</p>
+        </div>
+        <footer>
+            <span class="copyright">Powered by DeepShare</span>
+        </footer>
+    </script>
+</div>
+
+<script src="https://nzjddxpun.qnssl.com/ds-static/ssl/mustache.min.js"></script>
+<script src="../../jsserver/deepshare-redirect.min.js?<%= timeStamp %>"></script>
+</body>
+</html>

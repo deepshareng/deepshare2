@@ -1,0 +1,248 @@
+html {
+    font-size: 16px;
+}
+.hide {
+  display: none;
+}
+body {
+    margin:0;
+    -webkit-text-size-adjust:none;
+    -webkit-text-size-adjust:none;
+    -moz-text-size-adjust:none;
+    -ms-text-size-adjust:none;
+}
+body.theme-1 {
+    background: #2C3E5E;
+}
+.bg-top {
+    width: 90%;
+    position: absolute;
+    top: 0px;
+}
+.bg-right-top {
+    width: 60%;
+    height: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.bg-bottom {
+    width: 80%;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+.content {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    text-align: center;
+}
+.content-not-avail {
+    top: 20%;
+}
+.content-allow-me {
+    top: 25%;
+}
+.content-goto-appstore {
+    top: 22%;
+}
+.content-closeme {
+    top: 20%;
+}
+.content-oops {
+    top: 20%;
+}
+.content-openbrowser {
+    height: 100%;
+}
+.content-allow-me .bg-text {
+    line-height: 2rem;
+    display: block;
+}
+.tips-title {
+    font-size: 1.2rem;
+    line-height: 3rem;
+    display: block;
+}
+.list-item {
+    width: 40%;
+    font-size: 1rem;
+    margin: 0.3rem auto;
+    border-style: solid none;
+    border-color: #D8D8D8;
+    border-width: 0.1rem;
+    padding: 0.3rem 0;
+    display: block;
+}
+.icon-huge {
+    width: 15rem;
+    max-width: 70%;
+}
+.icon-normal {
+    width: 5rem;
+    max-width: 25%;
+}
+.copyright {
+    white-space: nowrap;
+    color:#548CFF;
+    font-size: .9rem;
+    display: block;
+}
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 2%;
+    text-align: center;
+}
+.bg-text {
+    font-size: 1rem;
+    color: #8D8D8D;
+    line-height: 1.5rem;
+}
+button.btn-download {
+    padding: .5rem 1.2rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-radius:2rem;
+    border-color: #8D8D8D;
+    font-size: 1rem;
+    background: transparent;
+}
+p.btn-download {
+    font-size: 1rem;
+    text-decoration: underline;
+}
+.btn-download-goto-app-store {
+    margin-top: 1.5rem;
+}
+.download-info {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+}
+.download-info-goto-app-store {
+    bottom: 20%;
+}
+.download-info-oops {
+    bottom: 10%;
+}
+.download-msg {
+    font-size: 1rem;
+    line-height: 2rem;
+    padding: 0 1rem .2rem;
+    border-bottom: .1rem solid #959595;
+}
+.download-title {
+    font-size: 1rem;
+}
+.anim-dragdown {
+    height: 10%;
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    text-align: right;
+    animation:verticalmove 1s infinite;
+    -webkit-animation:verticalmove 1s infinite;
+}
+@keyframes verticalmove {
+    from {top:3%;}
+    to {top:5%;}
+}
+
+.dragdown-icon {
+    display: block;
+    height: 100%;
+    margin-left: 30%;
+}
+.dragdown-tips {
+    display: block;
+    padding-top: 15%;
+    color: #8D8D8D;
+    font-size: .8rem;
+}
+.app-name {
+  font-size: 1.2rem;
+  display: block;
+  margin-top: .2rem;
+}
+.oops-jump {
+    width: 30%;
+    margin-top: 5%;
+}
+.oops-tips {
+    font-size: .8rem;
+    color: #8D8D8D;
+    line-height: 1.3rem;
+    display: block;
+}
+.openbrowser-title {
+  color:#548CFF;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 4rem;
+  height: 13%;
+  display: block;
+}
+.openbrowser-bg {
+  height: 80%;
+}
+.openbrowser-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 2rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat:no-repeat;
+  background-size: 12rem 4rem;
+}
+.openbrowser-icon-step-1 {
+  background-position: 0 0;
+}
+.openbrowser-icon-step-2 {
+  background-position: -4rem 0;
+}
+.openbrowser-icon-step-3 {
+  background-position: -8rem 0;
+}
+.openbrowser-icon-step-4-div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 67%;
+}
+.openbrowser-step {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  font-size: 1rem;
+}
+.openbrowser-step-text {
+  width: 9rem;
+  display: inline-block;
+  vertical-align:middle;
+}
+.openbrowser-step-1 {
+  top: 10%;
+  right: 1rem;
+}
+.openbrowser-step-2 {
+  top: 23%;
+  left: 1rem;
+}
+.openbrowser-step-3 {
+  top: 38%;
+  right: 1.5rem;
+}
+.openbrowser-step-4 {
+  position: absolute;
+  left: 55%;
+  top: 55%;
+}
+.theme-1 {
+  color: #DDDDDD;
+}
+.theme-1 button{
+  color: #FFFFFF;
+}

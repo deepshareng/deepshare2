@@ -1,0 +1,28 @@
+syntax = "proto3";
+package proto;
+
+message Event {
+	string AppID = 1;
+	string EventType = 2;
+	repeated string Channels = 3;
+	string SenderID = 4;
+	string CookieID = 5;
+	string UniqueID = 6;
+	int64 Count = 7;
+	UAInfo UAInfo = 8;
+	bytes KVs = 9;
+	int64 Timestamp = 10;
+}
+
+message UAInfo {
+	string Ua = 1;
+	string Ip = 2;
+	string Os = 3;
+	string OsVersion = 4;
+	string Brand = 5;
+	string Browser = 6;
+	bool IsWechat = 7;
+	bool IsWeibo = 8;
+	bool IsQQ = 9;
+	int64 ChromeMajor = 10;
+}

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,width=device-width">
+    <link rel="stylesheet" type="text/css" href="../../jsserver/sharelink_response_mobile.css">
+    <script src="https://nzjddxpun.qnssl.com/ds-static/ssl/zepto.min.js"></script>
+</head>
+<body class="theme-{{.Theme}}">
+<script type="text/javascript">
+    window.onload = function () {
+        var lang = navigator.language;
+        var isEng = /^en/.test(lang);
+        var tipStr = '我的使命已经完成，你可以把我关掉了';
+        if (isEng) {
+            tipStr = 'Job done, close me please.';
+        }
+        var html = '<div class="content content-closeme">\
+                        <img src="../../jsserver/images/closeme/close.png" class="icon-huge">\
+                        <p class="bg-text">' + tipStr + '</p>\
+                    </div>\
+                    <footer>\
+                        <span class="copyright">Powered by DeepShare</span>\
+                    </footer>';
+
+        $("body").html(html);
+    };
+</script>
+</body>
+</html>
